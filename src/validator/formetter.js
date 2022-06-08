@@ -17,6 +17,6 @@ module.exports.trimString=trimString
 module.exports.changetoLowerCase=changetoLowerCase
 module.exports.changeToUpperCase=changeToUpperCase
 
-// const c="   kaluram   "
-// console.log(c)//"   kaluram   "
-// console.log(c.trim())// "kaluram"
+// const c=                 // "shanu"
+// console.log(c)          //"shanu"
+// console.log(c.trim())  // "shanu"
