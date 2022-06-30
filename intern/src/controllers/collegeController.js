@@ -15,7 +15,12 @@ const isValid = function(value){
 const createCollege = async function(req, res) {
  try{
     if(!isValidReqBody(req.body)) return res.status(400).send({status:false,msg:"Invalid parameters.Please provide college details"})
-    let{name,fullname,logoLink} = req.body;
+   // let{name,fullname,logoLink} = req.body;
+     const data2 = req.body
+        let{name,fullname,logoLink} = data2;
+
+    console.log(data2)
+    req.body.fullname=fullname.split(' ').filter(word=>word).join(" ")//
     
     if(!isValid(name)) return res.status(400).send({status:false,msg:"college name is required"})
     if(!isValid(fullname)) return res.status(400).send({status:false,msg:"college fullName is required"})
