@@ -16,6 +16,7 @@ const createCollege = async function(req, res) {
  try{
     if(!isValidReqBody(req.body)) return res.status(400).send({status:false,msg:"Invalid parameters.Please provide college details"})
    // let{name,fullname,logoLink} = req.body;
+     const nameRegex=/^[a-zA-Z ]{2,10}$/
      const data2 = req.body
         let{name,fullname,logoLink} = data2;
 
@@ -23,6 +24,7 @@ const createCollege = async function(req, res) {
     req.body.fullname=fullname.split(' ').filter(word=>word).join(" ")//
     
     if(!isValid(name)) return res.status(400).send({status:false,msg:"college name is required"})
+     if(!nameRegex.test(name))  return res.status(400).send({status:false,msg:" name is required "})
     if(!isValid(fullname)) return res.status(400).send({status:false,msg:"college fullName is required"})
     if(!isValid(logoLink)) return res.status(400).send({status:false,msg:"logoLink is required"})
     if(!validUrl.isUri(logoLink)) return res.status(400).send({status:false,msg:"logoLink url is invalid"})
