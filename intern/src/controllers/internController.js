@@ -30,7 +30,7 @@ const isValidNumber = function (value) {
 const createIntern = async function (req, res) {
   try {
     const { name, collegeId, isDeleted } = req.body; // Destructing Key and Values.
-    const requestedBody = req.body;
+   
     const email = req.body.email.trim();
 
     if (!isValidReqBody(req.body))
